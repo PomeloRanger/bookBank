@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { Routes, RouterModule } from '@angular/router';
+
+import { TabsMenuPage } from './tabs-menu.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: TabsPage,
+    component: TabsMenuPage,
     children: [
       {
         path: 'home',
         children: [
           {
               path: '',
-              loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+              loadChildren: () => import('../tabs/home/home.module').then(m => m.HomePageModule)
           }
         ]
       },
@@ -21,7 +22,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../library/library.module').then(m => m.LibraryPageModule)
+            loadChildren: () => import('../tabs/library/library.module').then(m => m.LibraryPageModule)
           }
         ]
       },
@@ -30,7 +31,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../shop/shop.module').then(m => m.ShopPageModule)
+            loadChildren: () => import('../tabs/shop/shop.module').then(m => m.ShopPageModule)
           }
         ]
       },
@@ -50,6 +51,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TabsPageRoutingModule {}
+export class TabsMenuPageRoutingModule {}

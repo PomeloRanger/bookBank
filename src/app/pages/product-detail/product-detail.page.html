@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <!--Back button-->
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+
+    <!--Share and bookmark button-->
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorite()">
+        <ion-icon *ngIf="!isBookmarked" slot="icon-only" name="star-outline"></ion-icon>
+        <ion-icon *ngIf="isBookmarked" slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+      <ion-button (click)="shareSession()">
+        <ion-icon slot="icon-only" name="share"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+</ion-content>

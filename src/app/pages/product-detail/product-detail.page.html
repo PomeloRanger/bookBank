@@ -1,22 +1,69 @@
 <ion-header>
   <ion-toolbar>
-    <!--Back button-->
-    <ion-buttons slot="start">
-      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
-    </ion-buttons>
+	<!--Back button-->
+	<ion-buttons slot="start">
+	  <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+	</ion-buttons>
 
-    <!--Share and bookmark button-->
-    <ion-buttons slot="end">
-      <ion-button (click)="toggleFavorite()">
-        <ion-icon *ngIf="!isBookmarked" slot="icon-only" name="star-outline"></ion-icon>
-        <ion-icon *ngIf="isBookmarked" slot="icon-only" name="star"></ion-icon>
-      </ion-button>
-      <ion-button (click)="shareSession()">
-        <ion-icon slot="icon-only" name="share"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+	<!--Share and bookmark button-->
+	<ion-buttons slot="end">
+	  <ion-button (click)="toggleFavorite()">
+		<ion-icon *ngIf="!isBookmarked" slot="icon-only" name="star-outline"></ion-icon>
+		<ion-icon *ngIf="isBookmarked" slot="icon-only" name="star"></ion-icon>
+	  </ion-button>
+	  <ion-button (click)="shareSession()">
+		<ion-icon slot="icon-only" name="share"></ion-icon>
+	  </ion-button>
+	</ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
 
+
+<ion-content>
+	<ion-grid>
+		<!--Picture of books + Title and some details-->
+		<ion-row>
+			<ion-col>
+				<!--Add image of books here-->
+			</ion-col>
+
+			<ion-col>
+				<div *ngIf="product" class="ion-padding">
+					<h1>{{product.name}}</h1>
+				</div>
+			</ion-col>
+
+		</ion-row>
+
+		<!--Reviews/EBook/Pages/Family Library-->
+		<ion-row>
+			<ion-col>
+				<!--Review-->
+			</ion-col>
+
+			<ion-col>
+				<!--Book Categories-->
+			</ion-col>
+
+			<ion-col>
+				<!--Amount of pages-->
+			</ion-col>
+
+			<ion-col>
+				<!--Eligible for family library-->
+			</ion-col>
+		</ion-row>
+
+		<ion-row>
+			<!--More about this book. Redirects to in-depth synopsis-->
+		</ion-row>
+
+		<ion-row>
+			<!--Reviews-->
+		</ion-row>
+
+		<ion-row>
+			<!--About the author redirect to indepth description-->
+		</ion-row>
+	</ion-grid>
 </ion-content>

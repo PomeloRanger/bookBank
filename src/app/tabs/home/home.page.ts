@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BookService } from 'src/app/shared/services/book.service';
+import { Book } from 'src/app/shared/models/book';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private bookService : BookService) { }
 
-  ngOnInit() {
+  allBooks : Book[]=[];
+
+  ngOnInit() 
+  {
+    this.bookService.getAllBooks().then(result => {
+      this.allBooks = result;
+    });
   }
 
 }

@@ -1,20 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { ProductDetailPageRoutingModule } from './product-detail-routing.module';
-
-import { ProductDetailPage } from './product-detail.page';
+import { BookGenrePageRoutingModule } from './book-genre-routing.module';
+import { BookGenrePage } from './book-genre.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductDetailPageRoutingModule,
+    BookGenrePageRoutingModule,
   ],
-  declarations: [ProductDetailPage]
+  declarations: [BookGenrePage]
 })
-export class ProductDetailPageModule {}
+export class BookGenrePageModule {}

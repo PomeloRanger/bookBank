@@ -17,7 +17,27 @@
           <!--Title-->
           <ion-item>
             <ion-card-header>
-              <ion-card-title>Explore Books</ion-card-title>
+              <ion-card-title>New Release</ion-card-title>
+            </ion-card-header>
+
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <app-product-item></app-product-item>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!--Under 8 books-->
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <!--Title-->
+          <ion-item>
+            <ion-card-header>
+              <ion-card-title>Ebooks under $8</ion-card-title>
             </ion-card-header>
 
             <ion-icon name="arrow-forward" slot="end"></ion-icon>
@@ -26,42 +46,153 @@
           <ion-item>
             <ion-col>
               <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/YI2Psg-DeWEC?fife=w200-h300" />
                 <ion-card-header>
-                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                  <ion-card-title>Card Title</ion-card-title>
+                  <ion-card-title>{{allBooks[0]?.bookName}}</ion-card-title>
                 </ion-card-header>
               
                 <ion-card-content>
-                  Keep close to Nature's heart... and break clear away, once in awhile,
-                  and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                  ${{allBooks[0]?.bookPrice}}
                 </ion-card-content>
               </ion-card>
             </ion-col>
 
             <ion-col>
               <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/2VbVAAAAQBAJ?fife=w200-h300" />
                 <ion-card-header>
-                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                  <ion-card-title>Card Title</ion-card-title>
+                  <ion-card-title>{{allBooks[1]?.bookName}}</ion-card-title>
                 </ion-card-header>
               
                 <ion-card-content>
-                  Keep close to Nature's heart... and break clear away, once in awhile,
-                  and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                  ${{allBooks[1]?.bookPrice}}
                 </ion-card-content>
               </ion-card>
             </ion-col>
               
             <ion-col>
               <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/2VbVAAAAQBAJ?fife=w200-h300" />
                 <ion-card-header>
-                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                  <ion-card-title>Card Title</ion-card-title>
+                  <ion-card-title>{{allBooks[1]?.bookName}}</ion-card-title>
                 </ion-card-header>
               
                 <ion-card-content>
-                  Keep close to Nature's heart... and break clear away, once in awhile,
-                  and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                  ${{allBooks[1]?.bookPrice}}
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!--Health books-->
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <!--Title-->
+          <ion-item>
+            <ion-card-header>
+              <ion-card-title>Health reads</ion-card-title>
+            </ion-card-header>
+
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <ion-col>
+              <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/YI2Psg-DeWEC?fife=w200-h300" />
+                <ion-card-header>
+                  <ion-card-title>{{allBooks[0]?.bookName}}</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  ${{allBooks[0]?.bookPrice}}
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col>
+              <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/2VbVAAAAQBAJ?fife=w200-h300" />
+                <ion-card-header>
+                  <ion-card-title>{{allBooks[1]?.bookName}}</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  ${{allBooks[1]?.bookPrice}}
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+              
+            <ion-col>
+              <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/2VbVAAAAQBAJ?fife=w200-h300" />
+                <ion-card-header>
+                  <ion-card-title>{{allBooks[1]?.bookName}}</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  ${{allBooks[1]?.bookPrice}}
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!--Best Sellers books-->
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <!--Title-->
+          <ion-item>
+            <ion-card-header>
+              <ion-card-title>Best Sellers</ion-card-title>
+            </ion-card-header>
+
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <ion-col>
+              <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/YI2Psg-DeWEC?fife=w200-h300" />
+                <ion-card-header>
+                  <ion-card-title>{{allBooks[0]?.bookName}}</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  ${{allBooks[0]?.bookPrice}}
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col>
+              <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/2VbVAAAAQBAJ?fife=w200-h300" />
+                <ion-card-header>
+                  <ion-card-title>{{allBooks[1]?.bookName}}</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  ${{allBooks[1]?.bookPrice}}
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+              
+            <ion-col>
+              <ion-card>
+                <img src="https://books.google.com/books/content/images/frontcover/2VbVAAAAQBAJ?fife=w200-h300" />
+                <ion-card-header>
+                  <ion-card-title>{{allBooks[1]?.bookName}}</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  ${{allBooks[1]?.bookPrice}}
                 </ion-card-content>
               </ion-card>
             </ion-col>

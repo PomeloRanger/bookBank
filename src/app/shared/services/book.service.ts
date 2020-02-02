@@ -52,4 +52,18 @@ export class BookService {
 		});
 		return promise;
 	}
+
+	getBooksById(searchId : number)
+	{
+		const promise = new Promise<Book>((resolve, reject) => {
+			this.allBooks.forEach(element => {
+				if (element.bookID == searchId)
+				{
+					resolve(element);
+				}
+			});
+			resolve(null);
+		});
+		return promise;
+	}
 }

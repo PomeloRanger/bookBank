@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { HomePageRoutingModule } from './home-routing.module';
-import { HomePage } from './home.page';
+import { BookDetailPageRoutingModule } from './book-detail-routing.module';
+import { BookDetailPage } from './book-detail.page';
 import { ComponentsModule } from '../../shared/components/components.module';
 
 @NgModule({
@@ -11,9 +11,8 @@ import { ComponentsModule } from '../../shared/components/components.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    ComponentsModule,
-    HomePageRoutingModule
+    BookDetailPageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [BookDetailPage]
 })
-export class HomePageModule {}
+export class BookDetailPageModule {}

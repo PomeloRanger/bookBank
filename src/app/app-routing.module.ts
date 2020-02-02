@@ -24,12 +24,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'product-detail',
-    loadChildren: () => import('./pages/product-detail/product-detail.module').then( m => m.ProductDetailPageModule)
-  },
-  {
     path: 'author-detail',
     loadChildren: () => import('./pages/author-detail/author-detail.module').then( m => m.AuthorDetailPageModule)
+  },
+  {
+    path: 'book-genre',
+    loadChildren: () => import('./pages/book-genre/book-genre.module').then( m => m.BookGenrePageModule)
+  },
+  {
+    path: 'book-detail/:id',
+    loadChildren: () => import('./pages/book-detail/book-detail.module').then( m => m.BookDetailPageModule)
   }
 ];
 @NgModule({

@@ -18,7 +18,12 @@ export class HomePage implements OnInit {
   {
     this.bookService.getAllBooks().then(result => {
       this.allBooks = result;
+      console.log(this.allBooks[0].bookName);
     });
   }
 
+  goToPage(id:number)
+  {
+    this.router.navigate(['/book-detail', id]);
+  }
 }

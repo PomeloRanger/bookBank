@@ -24,7 +24,9 @@
           </ion-item>
 
           <ion-item>
-            <app-product-item></app-product-item>
+            <ion-col *ngFor="let books of [0,1,2]">
+              <app-book-item *ngIf="allBooks[books]" [book]="allBooks[books]"></app-book-item>
+            </ion-col>
           </ion-item>
         </ion-card>
       </ion-col>

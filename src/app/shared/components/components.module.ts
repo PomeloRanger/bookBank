@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 //Add custom component below and into the exports and the declaration
-import { ProductItemComponent } from './product-item/product-item.component';
+import { BookItemComponent } from './book-item/book-item.component';
 
 
 
 @NgModule({
   declarations: [
-    ProductItemComponent
+    BookItemComponent
   ],
   imports: [
     CommonModule,
     IonicModule
   ],
   exports : [
-    ProductItemComponent
+    BookItemComponent
   ]
 })
 export class ComponentsModule { }

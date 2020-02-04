@@ -16,9 +16,8 @@ export class HomePage implements OnInit {
 
   ngOnInit() 
   {
-    this.bookService.getAllBooks().then(result => {
-      this.allBooks = result;
-    });
+    this.bookService.getAllBooks()
+      .subscribe(books => this.allBooks = books);
   }
 
   goToPage(id:number)

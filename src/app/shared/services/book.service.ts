@@ -3,6 +3,7 @@ import { Book } from '../models/book';
 import { Publisher } from '../models/publisher';
 import { Category } from '../models/category';
 import { Author } from '../models/author';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -57,12 +58,9 @@ export class BookService {
 
 	allBooks: Book[]=[];
 
-	getAllBooks()
+	getAllBooks() : Observable<Book[]>
 	{
-		const promise = new Promise<Book[]>((resolve, reject) => {
-			resolve(this.allBooks);
-		});
-		return promise;
+		return of(this.allBooks);
 	}
 
 	getBooksById(searchId : number)

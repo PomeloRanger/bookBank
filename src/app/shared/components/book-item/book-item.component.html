@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card [routerLink]="['/book-detail', book.bookID]">
   <ion-img [src]="book.imageUrl"></ion-img>
   <ion-card-header>
     <ion-card-title>{{ book.bookName}}</ion-card-title>

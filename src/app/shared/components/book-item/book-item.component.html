@@ -1,0 +1,10 @@
+<ion-card [routerLink]="['/book-detail', book.bookID]">
+  <ion-img [src]="book.imageUrl"></ion-img>
+  <ion-card-header>
+    <ion-card-title>{{ book.bookName}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    ${{ book.bookPrice }}
+  </ion-card-content>
+</ion-card>

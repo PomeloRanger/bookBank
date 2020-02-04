@@ -63,17 +63,8 @@ export class BookService {
 		return of(this.allBooks);
 	}
 
-	getBooksById(searchId : number)
+	getBooksById(searchId : number) : Observable<Book>
 	{
-		const promise = new Promise<Book>((resolve, reject) => {
-			this.allBooks.forEach(element => {
-				if (element.bookID == searchId)
-				{
-					resolve(element);
-				}
-			});
-			resolve(null);
-		});
-		return promise;
+		return of (this.allBooks.find(books => books.bookID == searchId));
 	}
 }

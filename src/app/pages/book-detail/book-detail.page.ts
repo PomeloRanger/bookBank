@@ -22,6 +22,12 @@ export class BookDetailPage implements OnInit {
     let stringId = this.route.snapshot.paramMap.get("id")
     let numId = Number(stringId);
     this.bookService.getBooksById(numId)
-      .subscribe(books => this.book = books);
+      .subscribe(books => {
+        this.book = books
+        if (books == undefined)
+        {
+          this.router.navigate(["/tabs/home"]);
+        }
+      });
   }
 }

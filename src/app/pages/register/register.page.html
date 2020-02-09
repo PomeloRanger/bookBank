@@ -8,5 +8,42 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
 
+    <ion-item>
+      <ion-label position="floating">First name</ion-label>
+      <ion-input type="text" formControlName="firstname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Last name</ion-label>
+      <ion-input type="text" formControlName="lastname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Postal code</ion-label>
+      <ion-input type="number" formControlName="postalcode"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input type="text" formControlName="address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+  
+      <ion-button expand="block" color="tertiary" type="submit">Sign Up</ion-button>
+    </form>
+  
+    <ion-label color='danger'>
+      <p>{{signupError}}</p>
+    </ion-label>
 </ion-content>

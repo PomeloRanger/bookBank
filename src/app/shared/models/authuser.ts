@@ -1,20 +1,20 @@
 export class AuthUser
 {
-	UserID : Number;
-	FirstName : String;
-	LastName : String;
-	PostalCode : Number;
-	Username : String;
-	Address : String;
-	Token : String;
+	userID : number;
+	firstName : string;
+	lastName : string;
+	postalCode : number;
+	username : string;
+	address : string;
+	token : string;
 
-	public AuthUser(UserID:Number, 	LastName : String, PostalCode : Number, Username : String, Address : String, Token : String)
+	public AuthUser(UserID:number, 	LastName : string, PostalCode : number, Username : string, Address : string, token : string)
 	{
-		this.UserID = UserID;
-		this.LastName = LastName;
-		this.PostalCode = PostalCode;
-		this.Username = Username;
-		this.Address = Address;
-		this.Token = Token;
+		this.userID = UserID;
+		this.lastName = LastName;
+		this.postalCode = PostalCode;
+		this.username = Username;
+		this.address = Address;
+		this.token = token;
 	}
 }

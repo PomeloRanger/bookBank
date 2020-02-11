@@ -7,5 +7,54 @@
 </ion-header>
 
 <ion-content>
-  {{book?.bookName}}
+  <ion-grid>
+    <ion-row>
+        <ion-col size="3">
+          <ion-img [src]="book?.imageUrl"></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <ion-row>
+            <h1>{{book?.title}}</h1>
+          </ion-row>
+          <ion-row>
+            <ion-item *ngFor="let category of book?.categories">
+              <ion-chip [routerLink]="['/book-genre', category.categoryID]">
+                <ion-label>{{category.genre}}</ion-label>
+              </ion-chip>
+            </ion-item>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row>
+    <ion-col size="4">
+      <ion-icon name="bookmarks" size="large"></ion-icon>
+      <p>Ebook</p>
+    </ion-col>
+    <ion-col size="4">
+      <ion-icon name="mail-open" size="large"></ion-icon>
+      <p>Eligible</p>
+    </ion-col>
+    <ion-col size="4">
+      <ion-icon name="copy" size="large"></ion-icon>
+      <p>203 Pages</p>
+    </ion-col>
+      </ion-row>
+    
+      <ion-row>
+        <ion-col size="6">
+          <ion-button color="medium" expand="block">Free Sample</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button color="success" expand="block">Ebook ${{book?.price}}</ion-button>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+    
+      <ion-row>
+        <ion-col size="12">
+          <p style="font-weight: bold;">About this book</p>
+          {{book?.description}}
+        </ion-col>
+      </ion-row>
 </ion-content>

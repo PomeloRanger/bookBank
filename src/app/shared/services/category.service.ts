@@ -1,25 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Book } from '../models/book';
-import { Publisher } from '../models/publisher';
-import { Category } from '../models/category';
-import { Author } from '../models/author';
-import { Observable, of, throwError } from 'rxjs';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { Category } from '../models/category';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { throwError, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Book } from '../models/book';
 
 @Injectable({
   providedIn: 'root'
 })
+export class CategoryService {
 
-export class BookService {
+  private baseAPIUrl = environment.url;
+  
 	constructor(private http : HttpClient) 
 	{
 	}
-
-	private baseAPIUrl = environment.url;
-
-	private handleError(error: HttpErrorResponse) {
+  
+  	private handleError(error: HttpErrorResponse) {
 		if (error.error instanceof ErrorEvent) {
 		  // A client-side or network error occurred. Handle it accordingly.
 		  console.error('An error occurred:', error.error.message);
@@ -35,13 +33,13 @@ export class BookService {
 		  'Something bad happened; please try again later.');
 	};
 
-	getAllBooks() : Observable<Book[]>
+  	getAllCategory() : Observable<Category[]>
 	{
-		return this.http.get<Book[]>(`${this.baseAPIUrl}/api/book`).pipe(catchError(this.handleError));
+		return this.http.get<Category[]>(`${this.baseAPIUrl}/api/category`).pipe(catchError(this.handleError));
 	}
 
-	getBooksById(searchId : number) : Observable<Book>
+	getBooksByCategory(id : Number) : Observable<Book[]>
 	{
-		return this.http.get<Book>(`${this.baseAPIUrl}/api/book/${searchId}`).pipe(catchError(this.handleError));
+		return this.http.get<Book[]>(`${this.baseAPIUrl}/api/category/${id}`).pipe(catchError(this.handleError));
 	}
 }

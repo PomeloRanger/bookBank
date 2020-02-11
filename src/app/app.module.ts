@@ -9,6 +9,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule , Storage } from '@ionic/storage';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+
+export function jwtOptionsFactory(storage) {
+  return {
+    tokenGetter: () => {
+      return storage.get('access_token');
+    },
+    whitelistedDomains: ['localhost:5000']
+  }
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +27,15 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule, 
     HttpClientModule,
-    IonicModule.forRoot(), 
+    IonicStorageModule.forRoot(),
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+        deps: [Storage],
+      }
+    }),
+    IonicModule.forRoot(),
     AppRoutingModule
   ],
   providers: [

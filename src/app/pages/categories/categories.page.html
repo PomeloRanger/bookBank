@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Select Category</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+  <ion-list *ngFor="let category of categories">
+    <ion-item [routerLink]="['/book-genre', category.categoryID]">{{ category.genre }}</ion-item>
+  </ion-list>
+<ion-content>
+
+</ion-content>

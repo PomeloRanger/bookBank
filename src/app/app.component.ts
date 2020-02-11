@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,11 @@ export class AppComponent {
       icon: 'person-add'
     },
     {
+      title : 'Browse by Category',
+      url: '/categories',
+      icon: 'reorder'
+    },
+    {
       title: 'Settings',
       url: '/settings',
       icon: 'settings'
@@ -31,6 +37,11 @@ export class AppComponent {
   ];
 
   public appPagesAuthenticated = [
+    {
+      title : 'Browse by Category',
+      url: '/categories',
+      icon: 'reorder'
+    },
     {
       title: 'Profile',
       url: '/profile',
@@ -53,7 +64,8 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private menuController: MenuController
+    private menuController: MenuController,
+    private authService : AuthService
   ) {
     this.initializeApp();
   }
@@ -63,8 +75,17 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      //Temporary hide everything
-      this.menuController.enable(true, 'unauthenticated');
+      this.authService.authenticationState.subscribe(state => {
+        console.log(state);
+        if (!state)
+        {
+          this.menuController.enable(true, 'unauthenticated');
+        }
+        else
+        {
+          this.menuController.enable(true, 'authenticated');
+        }
+      })
     });
   }
 }

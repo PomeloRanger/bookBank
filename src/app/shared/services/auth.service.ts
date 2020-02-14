@@ -24,7 +24,28 @@ export class AuthService {
 
   constructor(private http: HttpClient, private helper: JwtHelperService, private storage: Storage, private platform: Platform,) 
   {
+    this.platform.ready().then(() => {
+      this.checkToken();
+    });
   }
+
+  private checkToken()
+  {
+    this.storage.get(TOKEN_KEY).then(token => {
+      if (token) {
+        let decoded = this.helper.decodeToken(token);
+        let isExpired = this.helper.isTokenExpired(token);
+ 
+        if (!isExpired) {
+          this.user = decoded;
+          this.authenticationState.next(true);
+        } else {
+          this.storage.remove(TOKEN_KEY);
+        }
+      }
+    });
+  }
+
 
   login(loginModel : Login) : Observable<AuthUser>
   {

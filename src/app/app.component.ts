@@ -36,29 +36,6 @@ export class AppComponent {
     }
   ];
 
-  public appPagesAuthenticated = [
-    {
-      title : 'Browse by Category',
-      url: '/categories',
-      icon: 'reorder'
-    },
-    {
-      title: 'Profile',
-      url: '/profile',
-      icon: 'person'
-    },
-    {
-      title: 'Sign out',
-      url: '/signout',
-      icon: 'log-out' 
-    },
-    {
-      title: 'Settings',
-      url: '/settings',
-      icon: 'settings'
-    }
-  ]
-
 
   constructor(
     private platform: Platform,
@@ -76,7 +53,6 @@ export class AppComponent {
       this.splashScreen.hide();
 
       this.authService.authenticationState.subscribe(state => {
-        console.log(state);
         if (!state)
         {
           this.menuController.enable(true, 'unauthenticated');
@@ -87,5 +63,10 @@ export class AppComponent {
         }
       })
     });
+  }
+
+  logout()
+  {
+    this.authService.logout();
   }
 }
